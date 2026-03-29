@@ -18,11 +18,13 @@ class Vec2 {
 
 class Pointer {
   constructor() {
-    this.position = new Vec2();
+    this.position = new Vec2(window.innerWidth / 2, window.innerHeight / 2);
+
     window.addEventListener('mousemove', e => {
       this.position.x = e.clientX;
       this.position.y = e.clientY;
     });
+
     window.addEventListener('touchmove', e => {
       if (e.touches.length > 0) {
         this.position.x = e.touches[0].clientX;
